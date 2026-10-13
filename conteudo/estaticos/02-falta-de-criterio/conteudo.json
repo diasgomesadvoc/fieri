@@ -1,0 +1,93 @@
+{
+  "titulo": "Estreia 2/3 · Parece falta de tempo. E se for falta de critério?",
+  "ordem_publicacao": 2,
+  "status": "Para aprovação",
+  "objetivo": "Entregar a primeira ferramenta de método, salvável e boa para mandar ao sócio. A sensação de falta de tempo muitas vezes é falta de critério combinado. O post traz um filtro de quatro perguntas (reversibilidade, precedente, repetição, informação) para separar o que precisa do dono do que ganha um dono e uma regra escrita, um exemplo de como aplicar o filtro e uma semana de anotação para começar na segunda. O convite é mandar para o sócio e comentar.",
+  "formula_gancho": "Fórmula 9, 'Não é X, é Y' (Vinci 189 'Não é falta de referência, é falta de estrutura', 153), reescrita como pergunta, como pede o manual ('prefira uma boa pergunta a uma afirmação gritada'). É a capa da proposta de dor sobre a pauta 1 do banco. A capa é em três camadas, como em 186 (chamada 'Parece falta de tempo.', título-pergunta e promessa prática com seta), no template F3, Pergunta em Marfim. O slide 3 traz a ideia do 'sócio-gargalo' (pauta 3) em tom sereno.",
+  "legenda": "Parece falta de tempo. E se for falta de critério?\n\nPode dar desconto? Qual prazo vem primeiro? Posso mandar assim? Cada pergunta é pequena, e você responde rápido porque sabe. Juntas, elas ocupam o dia.\n\nA equipe não pergunta por preguiça. Pergunta porque nunca ficou claro o que pode decidir sem você. Critério é isso: uma decisão que você toma uma vez, escreve e combina.\n\nNeste carrossel, um filtro de quatro perguntas: dá para desfazer? Vira precedente? Já decidi isso antes? Só eu tenho a informação?\n\nPara começar na segunda: por uma semana, anote cada decisão que chegar até você. Na sexta, passe a lista pelo filtro e escreva a primeira regra.\n\nCritério não tira você do escritório. Tira você do lugar errado dentro dele.\n\nMande para o seu sócio e conte nos comentários qual decisão sairia da sua mesa primeiro.\n\n#gestaodeescritorio #delegacao #escritoriocontabil #escritoriodearquitetura",
+  "slides": [
+    {
+      "tipo": "capa",
+      "fundo": "marfim",
+      "posicao": "meio",
+      "rotulo": "Método de gestão",
+      "pretitulo": "Parece falta de tempo.",
+      "titulo": "E se for falta de *critério*?",
+      "subtitulo": "Quatro perguntas para separar o que precisa de você do que pode sair da sua mesa →"
+    },
+    {
+      "tipo": "texto",
+      "fundo": "ebano",
+      "rotulo": "Uma cena conhecida",
+      "titulo": "Cada pergunta é pequena. Juntas, ocupam o *dia*.",
+      "corpo": [
+        "Pode dar desconto para esse cliente? Qual prazo vem primeiro? Posso mandar assim? Onde está aquele arquivo?",
+        "Você responde rápido, porque sabe a resposta. No fim da tarde, o trabalho que só você faz ficou para a noite. De novo."
+      ]
+    },
+    {
+      "tipo": "frase",
+      "fundo": "marfim",
+      "texto": "Quando tudo passa pela sua mesa, o escritório cresce até onde você *aguenta*.",
+      "apoio": "A equipe não pergunta por preguiça. Pergunta porque nunca ficou claro o que pode decidir sem você."
+    },
+    {
+      "tipo": "lista",
+      "fundo": "ebano",
+      "rotulo": "O filtro",
+      "titulo": "Antes de dizer “deixa comigo”, *filtre*.",
+      "itens": [
+        {
+          "titulo": "Se der errado, dá para desfazer?",
+          "texto": "Se dá, outra pessoa pode decidir. Se não dá, fica com você."
+        },
+        {
+          "titulo": "Isso vale para os próximos casos?",
+          "texto": "Preço, prazo, exceção: o que abre precedente é seu."
+        },
+        {
+          "titulo": "Já decidi isso antes?",
+          "texto": "Se sim, a resposta vira regra escrita e sai da sua mesa."
+        },
+        {
+          "titulo": "Só eu tenho a informação?",
+          "texto": "Se sim, passe a informação adiante e outra pessoa pode decidir."
+        }
+      ]
+    },
+    {
+      "tipo": "texto",
+      "fundo": "marfim",
+      "rotulo": "O filtro na prática",
+      "titulo": "Critério é decidir *uma vez* e escrever.",
+      "corpo": [
+        "Preço e exceções abrem precedente. Entrada e saída de pessoas não se desfazem fácil. Isso continua com você.",
+        "Compra de rotina, dúvida que já tem resposta, remarcação de reunião: cada uma ganha um dono e uma regra escrita, combinada com a equipe."
+      ]
+    },
+    {
+      "tipo": "texto",
+      "fundo": "ebano",
+      "rotulo": "Para fazer na segunda",
+      "titulo": "Uma semana só de *anotar*",
+      "corpo": [
+        "Durante uma semana, anote cada decisão que chegar até você. Só anote, sem mudar nada.",
+        "Na sexta, passe a lista pelas quatro perguntas. O que outra pessoa pode decidir ganha um dono e uma regra.",
+        "Comece por uma regra só. A mesa esvazia assim, uma decisão de cada vez."
+      ]
+    },
+    {
+      "tipo": "frase",
+      "fundo": "branco_off",
+      "texto": "Critério não tira você do escritório. Tira você do lugar *errado* dentro dele.",
+      "apoio": "Primeiro, perceber o que se repete. Depois, decidir uma vez só."
+    },
+    {
+      "tipo": "cta",
+      "fundo": "ebano",
+      "titulo": "Qual decisão sai da sua mesa *primeiro*?",
+      "texto": "Conte nos comentários. E, se você divide o escritório com alguém, vale fazer o filtro a quatro mãos.",
+      "acao": "Mande para o seu sócio"
+    }
+  ]
+}

@@ -85,8 +85,10 @@ def fundo_html(s: dict, a: Assets) -> str:
     if f == "foto":
         foto = a.get(s["foto"])
         pos = s.get("foto_posicao", "center")
+        enq = s.get("foto_enquadre", {})
+        extra = f"height:{enq['altura']}%;top:{enq['topo']}%;" if enq else ""
         return (
-            f'<img class="bg" src="{foto}" style="object-position:{pos}">'
+            f'<img class="bg" src="{foto}" style="object-position:{pos};{extra}">'
             f'<div class="veu"></div>'
         )
     if f in ("marfim", "ebano") and s.get("ondas", True):
@@ -195,7 +197,7 @@ em{font-style:italic;font-weight:700;color:var(--destaque)}
 .slide.escuro.fundo-raiz{background:#3D2219}
 .slide .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .slide .veu{position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,rgba(38,21,13,.15) 0%,rgba(38,21,13,.35) 40%,rgba(38,21,13,.92) 78%,#26150D 100%)}
+  background:linear-gradient(180deg,rgba(38,21,13,.08) 0%,rgba(38,21,13,.22) 34%,rgba(38,21,13,.84) 56%,rgba(38,21,13,.95) 72%,#26150D 100%)}
 
 .conteudo{position:absolute;inset:0;z-index:2;padding:46px 40px 64px;display:flex;flex-direction:column}
 .pos-topo{justify-content:flex-start}.pos-meio{justify-content:center}.pos-base{justify-content:flex-end}

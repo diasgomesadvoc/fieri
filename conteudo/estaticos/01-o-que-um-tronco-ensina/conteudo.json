@@ -1,0 +1,100 @@
+{
+  "titulo": "Estreia 1/3 · Dono você vira num dia. Gestor, aos poucos",
+  "ordem_publicacao": 1,
+  "status": "Para aprovação",
+  "objetivo": "Apresentar a FIERI pelo pensamento, sem começar pela marca. Parte da virada de técnico para gestor (dono tem data, seja abrindo o escritório ou entrando na sociedade; gestor é um tornar-se) e chega ao nome (fieri, tornar-se, lê-se fiéri), ao símbolo (o tronco real: casca, alburno, anéis, miolo com o olho), ao conceito Perceber para transformar e ao que a marca oferece. A entrega concreta são as quatro perguntas de diagnóstico do tronco, para responder no café de segunda. O convite é salvar e seguir.",
+  "formula_gancho": "Afirmação com ponto final e virada (seção 9, 'ponto final afirmativo': Vinci 75 'Efeito / Batom.', 119 'A roça / é o novo / luxo.'), com a linha do dor 03 'Dono você vira num dia. Gestor, aos poucos.' O subtítulo traz a fórmula 19, 'O que [X] ensina' (Vinci 58 'O que a collab Singer x Louis Vuitton ensina pro seu negócio', 226, 15), com o tronco no lugar do case famoso (seção 10.9) e a ponte prática da seção 9 ('para a segunda →'). Capa F5/F2: caixa Ébano sobre a foto quente do tronco, a página 'A origem' do manual.",
+  "legenda": "Dono você vira num dia. Gestor, a gente vai se tornando.\n\nMuito prazer. O nome deste perfil vem do latim fieri (lê-se fiéri): tornar-se, vir a ser. Não é fazer, é passar a ser. É a virada de quem abriu um escritório para exercer a profissão e, um dia, percebeu que também tinha virado gestor.\n\nO símbolo é o corte de um tronco real, o da capa. A casca protege, o alburno é a madeira jovem, os anéis contam o tempo e, no miolo, as fibras desenham um olho. Neste post, cada parte virou uma pergunta para o seu escritório.\n\nPor aqui: ebooks, cursos e skills de IA para quem lidera escritórios de advocacia, contabilidade, arquitetura e afins.\n\nSalve para o café de segunda e siga o perfil: o próximo post é sobre o que chega à sua mesa. E conte nos comentários qual das quatro perguntas foi a mais difícil.\n\n#gestaodeescritorio #escritoriodeadvocacia #escritoriocontabil #escritoriodearquitetura",
+  "slides": [
+    {
+      "tipo": "capa",
+      "fundo": "foto",
+      "foto": "marca/imagens/tronco-origem.jpg",
+      "caixa": false,
+      "posicao": "base",
+      "rotulo": "Perceber para transformar",
+      "titulo": "Dono você vira num dia. Gestor, aos *poucos*.",
+      "subtitulo": "O que um tronco ensina sobre essa virada, em quatro perguntas para a segunda →",
+      "foto_enquadre": {
+        "altura": 124,
+        "topo": -34
+      }
+    },
+    {
+      "tipo": "texto",
+      "fundo": "marfim",
+      "rotulo": "A virada",
+      "titulo": "Gestor, a gente vai se *tornando*.",
+      "corpo": [
+        "Virar dono tem data: o dia em que você abriu o escritório ou entrou na sociedade. Virar gestor, não.",
+        "Isso acontece a cada contratação, a cada conversa difícil, a cada decisão que deixa de depender só de você.",
+        "Ninguém avisa. Quando você vê, já está no meio do caminho."
+      ]
+    },
+    {
+      "tipo": "frase",
+      "fundo": "ebano",
+      "rotulo": "O nome",
+      "texto": "Não é fazer.\nÉ passar a *ser*.",
+      "apoio": "O nome deste perfil vem do latim fieri: tornar-se, vir a ser. Lê-se fiéri. É disso que se trata: a virada de técnico para gestor."
+    },
+    {
+      "tipo": "texto",
+      "fundo": "marfim",
+      "rotulo": "O símbolo",
+      "titulo": "O corte de um *tronco* real",
+      "corpo": [
+        "É o tronco da capa. A casca protege. O alburno é a madeira jovem. Os anéis contam o tempo de crescimento. E, no miolo, o desenho das fibras sugere um olho.",
+        "O símbolo carrega o perceber; o nome, o transformar. A seguir, cada parte vira uma pergunta para o seu escritório."
+      ]
+    },
+    {
+      "tipo": "lista",
+      "fundo": "ebano",
+      "rotulo": "Para levar à segunda",
+      "titulo": "Quatro perguntas do *tronco*",
+      "itens": [
+        {
+          "titulo": "Casca · a proteção",
+          "texto": "Quem ou o que protege o escritório quando algo sai do previsto?"
+        },
+        {
+          "titulo": "Alburno · a madeira jovem",
+          "texto": "O que está nascendo aqui e ainda precisa de alguém olhando de perto?"
+        },
+        {
+          "titulo": "Anéis · o tempo",
+          "texto": "O que você repete toda semana, mesmo quando o tempo aperta?"
+        },
+        {
+          "titulo": "Miolo · o olho",
+          "texto": "O que você vê todo dia e parou de perceber?"
+        }
+      ]
+    },
+    {
+      "tipo": "frase",
+      "fundo": "branco_off",
+      "rotulo": "Uma pista para a casca",
+      "texto": "Se a única resposta for “eu”, a casca está *fina*.",
+      "apoio": "Proteção é um processo escrito, um combinado claro, alguém de confiança: o que segura o escritório nos dias em que você não está."
+    },
+    {
+      "tipo": "texto",
+      "fundo": "ebano",
+      "rotulo": "O que você encontra aqui",
+      "titulo": "Inteligência aplicada à *gestão* de escritórios.",
+      "corpo": [
+        "Ebooks, cursos e skills de IA para quem lidera um escritório de advocacia, contabilidade, arquitetura e afins.",
+        "Por aqui, cada post deixa algo para aplicar na segunda. Nos próximos: decidir com critério e começar a usar IA pela tarefa."
+      ]
+    },
+    {
+      "tipo": "cta",
+      "fundo": "marfim",
+      "titulo": "Perceber para *transformar.*",
+      "texto": "Responda uma linha por pergunta no café de segunda. Uma semana depois, releia: o que mudou de lugar?",
+      "acao": "Salve e siga o perfil"
+    }
+  ]
+}

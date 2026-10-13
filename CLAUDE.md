@@ -20,6 +20,15 @@ Projeto para criar conteúdo estático (posts, carrosséis, stories) e editar v�
 - `referencias/` — materiais de referência enviados pelo usuário
 - `conteudo/` — peças produzidas (estáticos e vídeos)
 
+## Como produzir um carrossel
+1. Escreva `conteudo/estaticos/<NN-slug>/conteudo.json` (tipos de slide e marcação em `ferramentas/carrossel/gerar.py`).
+2. `python3 ferramentas/carrossel/gerar.py conteudo/estaticos/<NN-slug>/conteudo.json` → `slides.html`
+3. `node ferramentas/carrossel/exportar.mjs conteudo/estaticos/<NN-slug>/slides.html` → `png/slide-XX.png` (1080x1350)
+4. `python3 ferramentas/visualizador/gerar.py --artifact <pasta>` e republique a plataforma.
+
+Plataforma de visualização (Estúdio FIERI): https://claude.ai/artifact/7JPVQmffeudBDSGoRrCNcw
+Para atualizar de outra sessão, publique `<pasta>/pagina.html` passando essa URL em `url` e os arquivos de `<pasta>/arquivos.json` em `files`.
+
 ## Formatos do Instagram
 - Post/carrossel: 1080x1350 (4:5) ou 1080x1080
 - Stories/Reels: 1080x1920 (9:16)

@@ -1,0 +1,117 @@
+{
+  "titulo": "Estreia 3/3 · Antes de mais uma ferramenta de IA, pergunte",
+  "ordem_publicacao": 3,
+  "status": "Para aprovação",
+  "objetivo": "Abrir o pilar IA na prática mostrando como a FIERI fala de IA: sereno, sem modismo, pela tarefa e não pela ferramenta. O post entrega critérios para escolher a primeira tarefa, exemplos do dia a dia de advocacia, contabilidade e arquitetura, um roteiro de quatro passos para a segunda e o cuidado com dados de cliente (saber onde o dado fica e tirar o que identifica o cliente). Liga a prática ao símbolo (uma tarefa de cada vez, como um anel). O convite é salvar o roteiro, comentar e marcar quem faria o teste junto.",
+  "formula_gancho": "Fórmula 21, frase inacabada (Vinci 35, 60, 173), na versão da pauta 11 do banco ('Antes de assinar mais uma ferramenta de IA, pergunte'). Diferente da Vinci, a capa já completa a pergunta no título ('Qual tarefa você quer parar de fazer?'), porque a capa da FIERI sempre diz o tema (seção 10, item 14). O pretítulo faz a chamada, em camadas como em 186, e o subtítulo leva a ponte prática com seta. O slide 3 usa 'Não é X, é Y' (fórmula 9) em versão serena. Capa no template F4, Ébano com ondas.",
+  "legenda": "Antes de assinar mais uma ferramenta de IA, uma pergunta: qual tarefa você quer parar de fazer?\n\nAcontece assim: alguém testa uma IA nova, todo mundo acha interessante e, na semana seguinte, tudo volta a ser como era. Faltou escolher, antes, o que ela deveria resolver.\n\nUm roteiro sem modismo para a segunda: liste o que se repete toda semana, escolha uma tarefa só (repetitiva, fácil de conferir, de baixo risco e que você já saberia explicar a alguém), escreva o pedido como se ensinasse e teste sempre com alguém revisando.\n\nUm cuidado que vale para advocacia, contabilidade e arquitetura: dado de cliente não entra em ferramenta que você não conhece.\n\nA IA faz o rascunho. O critério continua sendo seu.\n\nSalve o roteiro e conte nos comentários qual tarefa você entregaria primeiro.\n\n#iaparaescritorios #gestaodeescritorio #escritoriodeadvocacia #escritoriodearquitetura",
+  "slides": [
+    {
+      "tipo": "capa",
+      "fundo": "ebano",
+      "posicao": "meio",
+      "rotulo": "IA na prática",
+      "pretitulo": "Antes de mais uma ferramenta de IA, pergunte:",
+      "titulo": "Qual tarefa você quer *parar de fazer*?",
+      "subtitulo": "Um roteiro simples para começar a usar IA pela tarefa, e não pela ferramenta →"
+    },
+    {
+      "tipo": "texto",
+      "fundo": "marfim",
+      "rotulo": "Uma cena conhecida",
+      "titulo": "Muita ferramenta, pouca *mudança*",
+      "corpo": [
+        "Alguém do escritório testa uma IA nova. Todo mundo acha interessante. Na semana seguinte, tudo volta a ser como era.",
+        "A ferramenta raramente é o problema. O que faltou foi escolher, antes, o que ela deveria resolver."
+      ]
+    },
+    {
+      "tipo": "frase",
+      "fundo": "ebano",
+      "texto": "Antes de escolher a ferramenta, escolha a *tarefa*.",
+      "apoio": "Com a tarefa clara, fica fácil saber se a IA ajudou. Sem ela, o teste vira curiosidade e ninguém retoma."
+    },
+    {
+      "tipo": "lista",
+      "fundo": "marfim",
+      "rotulo": "O critério",
+      "titulo": "Uma boa *primeira* tarefa é…",
+      "itens": [
+        {
+          "titulo": "Repetitiva",
+          "texto": "Volta toda semana, quase do mesmo jeito."
+        },
+        {
+          "titulo": "Fácil de conferir",
+          "texto": "Você bate o olho e sabe se ficou bom."
+        },
+        {
+          "titulo": "De baixo risco",
+          "texto": "Se sair errado, dá para corrigir antes de chegar ao cliente."
+        },
+        {
+          "titulo": "Fácil de explicar",
+          "texto": "Se você consegue ensinar a um estagiário, consegue pedir à IA."
+        }
+      ]
+    },
+    {
+      "tipo": "texto",
+      "fundo": "ebano",
+      "rotulo": "Exemplos do dia a dia",
+      "titulo": "Tarefas que costumam passar nos *critérios*",
+      "corpo": [
+        "Transformar anotações de reunião ou de visita de obra em resumo com próximos passos. Rascunhar o e-mail de retorno a um cliente. Montar o checklist de entrada de cliente novo.",
+        "Em todas, alguém revisa antes de sair. A IA faz o rascunho; o critério continua sendo seu."
+      ]
+    },
+    {
+      "tipo": "lista",
+      "fundo": "branco_off",
+      "rotulo": "Para fazer na segunda",
+      "titulo": "Um roteiro em quatro *passos*",
+      "itens": [
+        {
+          "titulo": "Liste o que se repete",
+          "texto": "Anote no caderno as tarefas que voltam toda semana."
+        },
+        {
+          "titulo": "Escolha uma só",
+          "texto": "A que passa nos quatro critérios. Uma, não cinco."
+        },
+        {
+          "titulo": "Escreva como se ensinasse",
+          "texto": "Contexto, um exemplo do resultado esperado e o que evitar."
+        },
+        {
+          "titulo": "Teste com revisão",
+          "texto": "Por algumas semanas, sempre com alguém conferindo antes de usar."
+        }
+      ]
+    },
+    {
+      "tipo": "frase",
+      "fundo": "ebano",
+      "rotulo": "Um cuidado",
+      "texto": "Dado de cliente não entra em ferramenta que você não *conhece*.",
+      "apoio": "Antes de colar um contrato, uma planilha ou um projeto, saiba onde aquilo fica guardado e quem pode ver. Na dúvida, tire o que identifica o cliente."
+    },
+    {
+      "tipo": "texto",
+      "fundo": "marfim",
+      "rotulo": "Depois, transformar",
+      "titulo": "Uma tarefa de cada vez, como *um anel*.",
+      "corpo": [
+        "Um tronco não cresce de uma vez. O uso de IA no escritório também não.",
+        "Quando a primeira tarefa estiver rodando bem, com revisão, escolha a próxima. Ficou? Vira rotina. Não ficou? Você aprendeu algo sobre a tarefa."
+      ]
+    },
+    {
+      "tipo": "cta",
+      "fundo": "ebano",
+      "titulo": "Qual tarefa você\nentregaria *à IA*?",
+      "texto": "Conte nos comentários e marque quem, no seu escritório, faria esse teste com você.",
+      "acao": "Salve o roteiro"
+    }
+  ]
+}
