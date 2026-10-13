@@ -1,0 +1,7 @@
+{
+  "ebano":       { "nome": "Ébano",       "hex": "#26150D", "rgb": [38, 21, 13],    "uso": "Fundo escuro principal, texto sobre claro" },
+  "raiz":        { "nome": "Raiz",        "hex": "#3D2219", "rgb": [61, 34, 25],    "uso": "Logo sobre claro, títulos, fundo escuro alternativo" },
+  "canela":      { "nome": "Canela",      "hex": "#896449", "rgb": [137, 100, 73],  "uso": "COR DE DESTAQUE: palavra-chave, detalhe, chamada" },
+  "marfim":      { "nome": "Marfim",      "hex": "#EDE7DB", "rgb": [237, 231, 219], "uso": "Fundo claro principal, texto sobre escuro" },
+  "branco_off":  { "nome": "Branco Off",  "hex": "#FBFAF6", "rgb": [251, 250, 246], "uso": "Fundo claro neutro, logo sobre escuro" }
+}

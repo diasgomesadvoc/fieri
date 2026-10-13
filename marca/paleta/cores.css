@@ -1,0 +1,9 @@
+/* Paleta FIERI — usar estas variáveis em todo conteúdo gerado em HTML/CSS */
+:root {
+  --ebano: #26150D;
+  --raiz: #3D2219;
+  --canela: #896449;      /* destaque */
+  --marfim: #EDE7DB;
+  --branco-off: #FBFAF6;
+  --fonte: "Carlito", "Lato", sans-serif;
+}
