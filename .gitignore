@@ -25,4 +25,4 @@ build/
 *.log
 
 # Gerado por ferramentas/visualizador/gerar.py a partir de conteudo/estaticos
-visualizador/midia/
+visualizador/
