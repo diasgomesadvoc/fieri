@@ -6,18 +6,22 @@ Repositório inicial do projeto **Fieri**.
 
 ## Sobre
 
-Descreva aqui o objetivo do projeto, o problema que ele resolve e para quem ele é.
+Ferramenta para criar **conteúdo estático** (posts, carrosséis, stories) e **editar vídeos** (Reels) para o Instagram, sempre seguindo a identidade visual da marca.
 
 ## Estrutura
 
 ```
 fieri/
 ├── .github/        # Templates de issues e pull requests
+├── conteudo/       # Peças produzidas (estáticos e vídeos)
 ├── docs/           # Documentação do projeto
+├── marca/          # Identidade visual: logos, fontes, paleta
+├── referencias/    # Materiais de referência e estudo
 ├── src/            # Código-fonte
 ├── tests/          # Testes
 ├── .editorconfig   # Padrões de formatação entre editores
 ├── .gitignore
+├── CLAUDE.md       # Instruções para o Claude
 ├── CONTRIBUTING.md
 └── README.md
 ```
