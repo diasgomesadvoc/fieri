@@ -1,0 +1,348 @@
+<title>Estúdio FIERI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,700&display=swap">
+<style>
+/* Layout: perfil do Instagram em coluna central (grade 3 colunas, células 3:4) + post aberto em diálogo (mídia 4:5 à esquerda, painel à direita; empilha no celular). */
+:root{
+  --bg:#FBFAF6; --surface:#EDE7DB; --fg:#26150D; --muted:rgba(38,21,13,.62); --line:rgba(38,21,13,.13);
+  --accent:#896449; --tag:#896449; --btn-bg:#26150D; --btn-fg:#FBFAF6; --scrim:rgba(38,21,13,.78);
+  --chip-bg:rgba(137,100,73,.14); --chip-fg:#3D2219;
+  --font:'Lato','Carlito','Helvetica Neue',Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#26150D; --surface:#3D2219; --fg:#EDE7DB; --muted:rgba(237,231,219,.64); --line:rgba(237,231,219,.15);
+  --accent:#896449; --tag:#EDE7DB; --btn-bg:#EDE7DB; --btn-fg:#26150D; --scrim:rgba(20,11,7,.86);
+  --chip-bg:rgba(237,231,219,.1); --chip-fg:#EDE7DB; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#26150D; --surface:#3D2219; --fg:#EDE7DB; --muted:rgba(237,231,219,.64); --line:rgba(237,231,219,.15);
+  --accent:#896449; --tag:#EDE7DB; --btn-bg:#EDE7DB; --btn-fg:#26150D; --scrim:rgba(20,11,7,.86);
+  --chip-bg:rgba(237,231,219,.1); --chip-fg:#EDE7DB; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:15px;line-height:1.45;padding-inline:16px;padding-block:0 48px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.barra{max-width:935px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.barra .marca{font-weight:700;letter-spacing:.2px}
+.barra .marca span{font-weight:400;color:var(--muted)}
+.barra a{color:var(--muted);font-size:13px;text-decoration:none;border-bottom:1px solid var(--line)}
+.barra a:hover{color:var(--fg)}
+
+.perfil{max-width:935px;margin:0 auto}
+.cabecalho{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,6vw,80px);align-items:center;padding-block:32px 28px}
+.avatar{width:clamp(86px,22vw,150px);aspect-ratio:1;border-radius:50%;padding:4px;background:conic-gradient(from 210deg,#896449,#3D2219,#EDE7DB,#896449)}
+.avatar img{width:100%;height:100%;border-radius:50%;border:3px solid var(--bg);display:block}
+.info{display:flex;flex-direction:column;gap:12px;min-width:0}
+.usuario{display:flex;align-items:center;gap:8px;font-size:20px}
+.usuario svg{flex:none}
+.numeros{display:flex;gap:28px;flex-wrap:wrap}
+.numeros b{font-weight:700}
+.bio{font-size:14px;line-height:1.5}
+.bio .nome{font-weight:700}
+.bio .cat{color:var(--muted)}
+.bio .site{font-weight:700;color:var(--fg)}
+
+.abas{display:flex;justify-content:center;border-top:1px solid var(--line)}
+.abas span{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding-block:14px;border-top:1px solid var(--fg);margin-top:-1px}
+
+.grade{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px}
+.celula{position:relative;aspect-ratio:3/4;max-width:100%;border:0;padding:0;background:var(--surface);cursor:pointer;overflow:hidden;display:block}
+.celula img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .2s}
+.celula:hover img{filter:brightness(.82)}
+.celula .icone{position:absolute;top:8px;right:8px;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+.celula .ordem{position:absolute;left:8px;bottom:8px;font-size:11px;font-weight:700;color:#FBFAF6;background:rgba(38,21,13,.72);padding:3px 7px;border-radius:2px}
+.nota{color:var(--muted);font-size:13px;margin-top:14px;max-width:65ch}
+.vazio{padding:48px 0;color:var(--muted);text-align:center}
+
+/* Post aberto */
+.dialogo{position:fixed;inset:0;z-index:20;background:var(--scrim);display:flex;align-items:center;justify-content:center;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.fechar{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:12px;z-index:22;width:40px;height:40px;border:0;border-radius:50%;background:transparent;color:#FBFAF6;cursor:pointer;display:grid;place-items:center}
+.post{background:var(--bg);display:grid;grid-template-columns:minmax(0,min(540px,calc((100vh - 32px) * .8))) 340px;grid-template-rows:auto minmax(0,1fr);grid-template-areas:"midia cab" "midia lado";max-height:calc(100vh - 32px);max-width:100%;overflow:hidden;border-radius:4px}
+.cab{grid-area:cab;display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line);border-left:1px solid var(--line)}
+.cab img{width:32px;height:32px;border-radius:50%}
+.cab .quem{font-weight:700;font-size:14px}
+.cab .sub{font-size:12px;color:var(--muted)}
+.midia{grid-area:midia;position:relative;aspect-ratio:4/5;max-width:100%;background:#26150D;overflow:hidden;touch-action:pan-y;user-select:none}
+.trilho{display:flex;height:100%;transition:transform .32s cubic-bezier(.2,.7,.2,1)}
+.trilho img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;border:0;background:rgba(251,250,246,.88);color:#26150D;cursor:pointer;display:grid;place-items:center;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.nav.ant{left:10px}.nav.prox{right:10px}
+.contador{position:absolute;top:12px;right:12px;font-size:12px;font-weight:700;color:#FBFAF6;background:rgba(38,21,13,.6);padding:3px 9px;border-radius:12px;font-variant-numeric:tabular-nums}
+.pontos{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:4px}
+.pontos i{width:6px;height:6px;border-radius:50%;background:rgba(251,250,246,.45)}
+.pontos i.on{background:#FBFAF6}
+
+.lado{grid-area:lado;display:flex;flex-direction:column;min-height:0;border-left:1px solid var(--line)}
+.chip{margin-left:auto;font-size:11px;font-weight:700;background:var(--chip-bg);color:var(--chip-fg);padding:4px 8px;border-radius:2px;white-space:nowrap}
+.legenda{padding:14px 16px;overflow-y:auto;flex:1;min-height:0;font-size:14px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
+.legenda b{font-weight:700}
+.legenda .hash{color:var(--tag);font-weight:700}
+.acoes{display:flex;gap:16px;padding:10px 16px 4px;border-top:1px solid var(--line)}
+.acoes svg{display:block}
+.acoes .salvar{margin-left:auto}
+.miniaturas{display:flex;gap:6px;padding:10px 16px;overflow-x:auto}
+.miniaturas button{flex:none;width:44px;aspect-ratio:4/5;border:2px solid transparent;padding:0;background:none;cursor:pointer;border-radius:2px;overflow:hidden}
+.miniaturas button.on{border-color:var(--accent)}
+.miniaturas img{width:100%;height:100%;object-fit:cover;display:block}
+.baixar{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:6px 16px 16px}
+.btn{border:1px solid var(--fg);background:transparent;padding:10px 12px;font-size:13px;font-weight:700;cursor:pointer;border-radius:2px;text-align:center;text-decoration:none;color:var(--fg)}
+.btn.cheio{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+.btn.largo{grid-column:1/-1}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.aviso{grid-column:1/-1;font-size:12px;color:var(--muted);min-height:1.2em}
+.aviso a{color:var(--fg)}
+
+@media (max-width:860px){
+  .dialogo{padding:0;align-items:stretch}
+  .post{display:block;max-height:none;height:100%;width:100%;overflow-y:auto;border-radius:0}
+  .midia{width:100%}
+  .cab,.lado{border-left:0}
+  .cab{padding-right:60px}
+  .lado{min-height:auto}
+  .lado>*{flex:none}
+  .legenda{overflow:visible}
+  .acoes{order:-1;border-top:0}
+  .fechar{color:var(--fg);background:var(--bg);box-shadow:0 1px 4px rgba(38,21,13,.25)}
+}
+@media (prefers-reduced-motion:reduce){.trilho{transition:none}.celula img{transition:none}}
+</style>
+
+<div class="barra">
+  <div class="marca">Estúdio FIERI <span>· prévia do Instagram</span></div>
+  <a id="link-repo" href="#" target="_blank" rel="noopener">Arquivos no GitHub ↗</a>
+</div>
+
+<main class="perfil">
+  <section class="cabecalho">
+    <div class="avatar"><img id="avatar" alt="Foto de perfil da FIERI"></div>
+    <div class="info">
+      <div class="usuario"><span id="usuario"></span>
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-label="verificado" role="img"><circle cx="12" cy="12" r="10" fill="#896449"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#FBFAF6" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="numeros"><span><b id="n-posts">0</b> publicações</span></div>
+      <div class="bio" id="bio"></div>
+    </div>
+  </section>
+  <nav class="abas" aria-label="Seções do perfil"><span><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z"/></svg>Publicações</span></nav>
+  <section class="grade" id="grade" aria-label="Grade de publicações"></section>
+  <p class="nota" id="nota"></p>
+</main>
+
+<div class="dialogo" id="dialogo" role="dialog" aria-modal="true" aria-labelledby="post-titulo" hidden>
+  <button class="fechar" id="fechar" aria-label="Fechar"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  <article class="post">
+    <header class="cab">
+      <img id="post-avatar" alt="">
+      <div><div class="quem" id="post-titulo"></div><div class="sub" id="post-sub"></div></div>
+      <span class="chip" id="post-status"></span>
+    </header>
+    <div class="midia" id="midia">
+      <div class="trilho" id="trilho"></div>
+      <span class="contador" id="contador"></span>
+      <button class="nav ant" id="ant" aria-label="Slide anterior"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <button class="nav prox" id="prox" aria-label="Próximo slide"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+      <div class="pontos" id="pontos"></div>
+    </div>
+    <div class="lado">
+      <div class="legenda" id="legenda"></div>
+      <div class="acoes" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12a8 8 0 1 1-3.2-6.4L20 4l-.9 4.2A8 8 0 0 1 20 12z"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></svg>
+        <svg class="salvar" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-6-5-6 5z"/></svg>
+      </div>
+      <div class="miniaturas" id="miniaturas" aria-label="Ir para o slide"></div>
+      <div class="baixar">
+        <button class="btn cheio" id="b-slide">Baixar slide</button>
+        <button class="btn" id="b-zip">Baixar todos (.zip)</button>
+        <button class="btn largo" id="b-legenda">Copiar legenda</button>
+        <p class="aviso" id="aviso" role="status"></p>
+      </div>
+    </div>
+  </article>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+const DADOS = /*__DADOS__*/null;
+const $ = (id) => document.getElementById(id);
+const P = DADOS.perfil;
+
+// Modo de download: dentro do claude.ai usa a capacidade "downloads"; aberto direto no navegador usa link comum.
+const NO_CLAUDE = !!(window.claude && window.claude.use);
+let downloads = NO_CLAUDE ? undefined : 'local';
+if (NO_CLAUDE) window.claude.use('downloads').then((d) => { downloads = d; atualizarBotoes(); }).catch(() => { downloads = null; atualizarBotoes(); });
+
+// Cabeçalho do perfil
+$('avatar').src = DADOS.avatar;
+$('post-avatar').src = DADOS.avatar;
+$('usuario').textContent = P.usuario;
+$('n-posts').textContent = DADOS.carrosseis.length;
+$('link-repo').href = DADOS.repo;
+const bio = $('bio');
+const linha = (cls, txt) => { const d = document.createElement('div'); if (cls) d.className = cls; d.textContent = txt; bio.append(d); };
+linha('nome', P.nome); linha('cat', P.categoria); P.bio.forEach((t) => linha('', t)); linha('site', P.site);
+
+// Grade: no Instagram a publicação mais recente aparece primeiro.
+const grade = $('grade');
+const ordemGrade = [...DADOS.carrosseis].sort((a, b) => b.ordem - a.ordem);
+if (!ordemGrade.length) grade.outerHTML = '<p class="vazio">Nenhum carrossel exportado ainda.</p>';
+ordemGrade.forEach((c) => {
+  const b = document.createElement('button');
+  b.className = 'celula';
+  b.setAttribute('aria-label', `Abrir ${c.titulo}`);
+  b.innerHTML = `<img alt="" loading="lazy"><span class="icone"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-1V8a2 2 0 0 0-2-2H5V6a3 3 0 0 1 3-3z"/><rect x="3" y="8" width="13" height="13" rx="3"/></svg></span><span class="ordem"></span>`;
+  b.querySelector('img').src = c.slides[0].img;
+  b.querySelector('.ordem').textContent = `Publicação ${c.ordem}`;
+  b.addEventListener('click', () => abrir(c.slug));
+  grade.append(b);
+});
+if (ordemGrade.length) $('nota').textContent = `A grade mostra o perfil depois de todas as publicações: a mais recente aparece primeiro, recortada em 3:4 como no app. Publique na ordem dos números (a Publicação 1 vai primeiro).`;
+
+// Post aberto
+let atual = null, idx = 0;
+const trilho = $('trilho');
+
+function abrir(slug, slide = 0) {
+  atual = DADOS.carrosseis.find((c) => c.slug === slug);
+  if (!atual) return;
+  idx = slide;
+  trilho.innerHTML = ''; $('pontos').innerHTML = ''; $('miniaturas').innerHTML = '';
+  atual.slides.forEach((s, i) => {
+    const img = document.createElement('img'); img.src = s.img; img.alt = `Slide ${i + 1} de ${atual.slides.length}`; img.draggable = false; trilho.append(img);
+    $('pontos').append(document.createElement('i'));
+    const m = document.createElement('button'); m.setAttribute('aria-label', `Slide ${i + 1}`);
+    const mi = document.createElement('img'); mi.src = s.img; mi.alt = ''; m.append(mi);
+    m.addEventListener('click', () => ir(i)); $('miniaturas').append(m);
+  });
+  $('post-titulo').textContent = P.usuario;
+  $('post-sub').textContent = `${atual.titulo} · Publicação ${atual.ordem} de ${DADOS.carrosseis.length}`;
+  $('post-status').textContent = atual.status;
+  pintarLegenda();
+  $('aviso').textContent = '';
+  $('dialogo').hidden = false;
+  document.body.style.overflow = 'hidden';
+  try { history.replaceState(null, '', '#' + slug); } catch (e) {}
+  ir(idx, false);
+  $('fechar').focus();
+}
+
+function fechar() {
+  $('dialogo').hidden = true; document.body.style.overflow = '';
+  try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+  atual = null;
+}
+
+function pintarLegenda() {
+  const leg = $('legenda'); leg.textContent = '';
+  const b = document.createElement('b'); b.textContent = P.usuario + ' '; leg.append(b);
+  (atual.legenda || '').split(/(#[\p{L}\p{N}_]+)/u).forEach((parte) => {
+    if (parte.startsWith('#')) { const s = document.createElement('span'); s.className = 'hash'; s.textContent = parte; leg.append(s); }
+    else leg.append(document.createTextNode(parte));
+  });
+}
+
+function ir(i, animar = true) {
+  const n = atual.slides.length;
+  idx = Math.max(0, Math.min(n - 1, i));
+  trilho.style.transition = animar ? '' : 'none';
+  trilho.style.transform = `translateX(${-idx * 100}%)`;
+  $('contador').textContent = `${idx + 1}/${n}`;
+  [...$('pontos').children].forEach((p, k) => p.classList.toggle('on', k === idx));
+  [...$('miniaturas').children].forEach((m, k) => m.classList.toggle('on', k === idx));
+  $('ant').hidden = idx === 0; $('prox').hidden = idx === n - 1;
+  $('b-slide').textContent = `Baixar slide ${idx + 1} (PNG)`;
+  const faixa = $('miniaturas'), mini = faixa.children[idx];
+  if (mini) faixa.scrollTo({ left: mini.offsetLeft - faixa.clientWidth / 2 + mini.clientWidth / 2, behavior: animar ? 'smooth' : 'auto' });
+}
+
+$('ant').addEventListener('click', () => ir(idx - 1));
+$('prox').addEventListener('click', () => ir(idx + 1));
+$('fechar').addEventListener('click', fechar);
+$('dialogo').addEventListener('click', (e) => { if (e.target === $('dialogo')) fechar(); });
+document.addEventListener('keydown', (e) => {
+  if ($('dialogo').hidden) return;
+  if (e.key === 'Escape') fechar();
+  if (e.key === 'ArrowRight') ir(idx + 1);
+  if (e.key === 'ArrowLeft') ir(idx - 1);
+});
+
+// Arrastar / deslizar
+(() => {
+  const m = $('midia'); let x0 = null, dx = 0, larg = 1;
+  m.addEventListener('pointerdown', (e) => { if (e.target.closest('button')) return; x0 = e.clientX; dx = 0; larg = m.clientWidth; trilho.style.transition = 'none'; m.setPointerCapture(e.pointerId); });
+  m.addEventListener('pointermove', (e) => { if (x0 === null) return; dx = e.clientX - x0; trilho.style.transform = `translateX(calc(${-idx * 100}% + ${dx}px))`; });
+  const fim = () => { if (x0 === null) return; x0 = null; trilho.style.transition = ''; if (Math.abs(dx) > larg * 0.18) ir(idx + (dx < 0 ? 1 : -1)); else ir(idx); };
+  m.addEventListener('pointerup', fim); m.addEventListener('pointercancel', fim);
+})();
+
+// Downloads
+const aviso = (t, link) => { const a = $('aviso'); a.textContent = t; if (link) { a.append(' '); const l = document.createElement('a'); l.href = DADOS.repo + '/' + atual.slug + '/png'; l.target = '_blank'; l.rel = 'noopener'; l.textContent = 'Abrir a pasta no GitHub ↗'; a.append(l); } };
+
+function atualizarBotoes() {
+  const indisponivel = downloads === null;
+  $('b-slide').disabled = indisponivel; $('b-zip').disabled = indisponivel;
+  if (indisponivel && atual) aviso('Download indisponível nesta visualização.', true);
+}
+
+async function salvar(nome, blob) {
+  if (downloads === 'local') {
+    const url = URL.createObjectURL(blob); const a = document.createElement('a');
+    a.href = url; a.download = nome; document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000); return true;
+  }
+  if (!downloads) { aviso('O download ainda está carregando. Tente de novo em instantes.'); return false; }
+  try { await downloads.save({ filename: nome, data: blob }); return true; }
+  catch (e) {
+    if (e && e.code === 'declined') aviso('Download cancelado.');
+    else if (e && e.code === 'rate_limited') aviso('Já existe um download aguardando confirmação.');
+    else aviso('Não foi possível baixar aqui.', true);
+    return false;
+  }
+}
+
+async function pegar(url) { const r = await fetch(url); if (!r.ok) throw new Error(r.status); return r.blob(); }
+
+$('b-slide').addEventListener('click', async () => {
+  const s = atual.slides[idx]; const nome = `${atual.slug}-${s.nome}.png`;
+  aviso('Preparando o PNG…');
+  try {
+    if (await salvar(nome, await pegar(s.png))) aviso(`${nome} pronto.`);
+  } catch (e) {
+    if (downloads === 'local') { const a = document.createElement('a'); a.href = s.png; a.download = nome; a.click(); aviso(''); }
+    else aviso('Não encontrei o arquivo.', true);
+  }
+});
+
+$('b-zip').addEventListener('click', async () => {
+  if (!window.JSZip) { aviso('O compactador não carregou.', true); return; }
+  const btn = $('b-zip'); btn.disabled = true;
+  try {
+    const zip = new JSZip();
+    for (let i = 0; i < atual.slides.length; i++) {
+      aviso(`Juntando slide ${i + 1} de ${atual.slides.length}…`);
+      zip.file(`${atual.slides[i].nome}.png`, await pegar(atual.slides[i].png));
+    }
+    if (atual.legenda) zip.file('legenda.txt', atual.legenda);
+    aviso('Compactando…');
+    const blob = await zip.generateAsync({ type: 'blob' });
+    if (await salvar(`${atual.slug}.zip`, blob)) aviso(`${atual.slug}.zip pronto.`);
+  } catch (e) { aviso('Não foi possível montar o .zip aqui.', true); }
+  finally { btn.disabled = downloads === null; }
+});
+
+$('b-legenda').addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(atual.legenda || ''); aviso('Legenda copiada.'); }
+  catch (e) {
+    const r = document.createRange(); r.selectNodeContents($('legenda'));
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    aviso('Legenda selecionada: use Ctrl+C (ou Copiar) para copiar.');
+  }
+});
+
+// Abre direto um carrossel pelo link (#slug)
+const alvo = location.hash.slice(1);
+if (alvo && DADOS.carrosseis.some((c) => c.slug === alvo)) abrir(alvo);
+</script>
